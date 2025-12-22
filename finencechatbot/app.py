@@ -5,10 +5,14 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from bot.linebot import build_smart_message
 
 app = Flask(__name__)
+import os
 
-# 填入你的資料
-LINE_CHANNEL_ACCESS_TOKEN = "D+46QbNRN+XD7SPf5hbGu4e+lKPGe8yBNYvYtcHWmG9qjDXGrmdEkTmqhxt6+QcbzhQzjWr98OG6U+4W79DnVfqIKoNgbWUkD5BL1/HRfwmqmIG2YGzgFry+4Wyjr+23LeAaHHgdgFmTO5arumONDAdB04t89/1O/w1cDnyilFU="
-LINE_CHANNEL_SECRET = "d7c3129fbcb002294220eb30b6b1ffcd"
+# 改成從系統環境變數讀取
+LINE_CHANNEL_ACCESS_TOKEN = os.getenv('LINE_CHANNEL_ACCESS_TOKEN')
+LINE_CHANNEL_SECRET = os.getenv('LINE_CHANNEL_SECRET')
+
+#LINE_CHANNEL_ACCESS_TOKEN = "D+46QbNRN+XD7SPf5hbGu4e+lKPGe8yBNYvYtcHWmG9qjDXGrmdEkTmqhxt6+QcbzhQzjWr98OG6U+4W79DnVfqIKoNgbWUkD5BL1/HRfwmqmIG2YGzgFry+4Wyjr+23LeAaHHgdgFmTO5arumONDAdB04t89/1O/w1cDnyilFU="
+#LINE_CHANNEL_SECRET = "d7c3129fbcb002294220eb30b6b1ffcd"
 
 line_bot_api = LineBotApi(LINE_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(LINE_CHANNEL_SECRET)
