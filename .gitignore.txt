@@ -1,0 +1,17 @@
+# Python 暫存檔
+__pycache__/
+*.pyc
+
+# 敏感資訊檔案
+.env
+
+# 爬蟲產生的 JSON 資料
+data/*.json
+
+# 編輯器設定
+.vscode/
+.idea/
+
+# 虛擬環境
+venv/
+env/
